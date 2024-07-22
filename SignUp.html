@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="resources/styles/signup.css">
+	<link rel="icon" href="resources/images/logo2.jpg">
+</head>
+<body style="background-image:url('resources/Images/signup.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; margin: 0; padding: 0;">
+
+	<div class="container">
+		<img id = "x_logo" src="resources/images/logo.png" alt="x logo">
+		<form class="signup-form-container" id="signup-form-container-id">
+			<h1>Happening Now!</h1>
+			<div>
+				<label for="signup-username">UserName:</label>
+				<input type="text" id="signup-username" name="signup-username" placeholder="enter username">
+			</div>
+			<div>
+				<label for="signup-password">Password:</label>
+				<input type="password" id="signup-password" name="signup-password" placeholder="enter password">
+			</div>
+			<div>
+				<label for="signup-confirm-password">Confirm Password:</label>
+				<input type="password" id="signup-confirm-password" name="signup-confirm-password" placeholder="enter password again">
+			</div>
+			<div>
+				<label for="signup-user-image">Password:</label>
+				<input type="file" id="signup-user-image" name="signup-user-image">
+			</div>
+			<div id="signup-error"></div>
+			<button class="signup-btn" type="submit">Sign up</button>
+			<a href="login.html">Already registered? click here to login</a>
+		</form>
+	</div>
+	
+	<script src="resources/scripts/signup.js"></script>
+</body>
+</html>
