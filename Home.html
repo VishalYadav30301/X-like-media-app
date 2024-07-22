@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="resources/styles/home.css">
+</head>
+<body>
+	<div id="home_container">
+		<div id="left_side_bar">
+			<button><img src="resources/images/home.png" alt=""></button>
+			<button><img src="resources/images/search.png" alt=""></button>
+			<button><img src="resources/images/bell.png" alt=""></button>
+			<button><img src="resources/images/user.png" alt=""></button>
+			<button><img src="resources/images/add_tweet.png" alt=""></button>
+			<button><img src="resources/images/logout.png" alt=""></button>
+		</div>
+		<div id="main_content">
+			<div id="add_tweet">
+				<img src="resources/images/profile.png" alt="">
+				<div id="add_tweet_input">
+					<input id="add_tweet_input_ele" type="text" placeholder="Whats Happening?">
+					<button onclick="addTweetHandler()">tweet</button>
+				</div>
+			</div>
+			<div id="tweets"></div>
+		</div>
+		<script src="resources\Scripts\tweetstorage.js"></script>
+		<script>
+
+			 document.addEventListener('DOMContentLoaded', () => {
+				loadTweets();
+			});
+	
+			function addTweetHandler() {
+				const tweetInput = document.getElementById('add_tweet_input_ele');
+				const tweetText = tweetInput.value.trim();
+	
+				if (tweetText) {
+					const tweets = getTweets();
+					const newTweet = { id: Date.now(), text: tweetText };
+					tweets.push(newTweet);
+					saveTweets(tweets);
+					tweetInput.value = '';
+					renderTweets(tweets);
+				}
+			}
+	
+			function loadTweets() {
+				const tweets = getTweets();
+				renderTweets(tweets);
+			}
+	
+			function renderTweets(tweets) {
+				const tweetsContainer = document.getElementById('tweets');
+				tweetsContainer.innerHTML = '';
+				tweets.forEach(tweet => {
+					const tweetElement = document.createElement('div');
+					tweetElement.className = 'tweet';
+					tweetElement.innerHTML = `
+						<span>${tweet.text}</span>
+						<button onclick="deleteTweetHandler(${tweet.id})">Delete</button>
+					`;
+					tweetsContainer.appendChild(tweetElement);
+				});
+			}
+		</script>
+
+		<div id="right_side_bar">
+			<div class="fb-page" 
+				 data-href="https://www.facebook.com/facebook" 
+				 data-tabs="timeline" 
+				 data-width="" 
+				 data-height="" 
+				 data-small-header="false" 
+				 data-adapt-container-width="true" 
+				 data-hide-cover="false" 
+				 data-show-facepile="true">
+			</div>
+		</div>
+    
+
+
+
+
+
+
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0" nonce="vWfC4mCw"></script>
+		
+	</div>
+	<script src="resources/scripts/home.js"></script>
+</body>
+</html>
