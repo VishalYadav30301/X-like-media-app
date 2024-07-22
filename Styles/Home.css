@@ -1,0 +1,83 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#home_container{
+	display:flex;
+	height: 100vh;
+	width: 100vw;
+}
+#left_side_bar {
+	/* background-color: aqua; */
+	width: 10%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid lightgray;
+}
+
+#main_content {
+	/* background-color: antiquewhite; */
+	width: 150%;
+}
+
+#right_side_bar{
+	width: 100%;
+    height: 105vh;
+    display:flex;
+    justify-content:right;
+    align-items:right;
+}
+.fb-page {
+	width: 100%;
+	height: 100%;
+    display:block;
+}
+
+#left_side_bar img {
+	height: 26px;
+	width: 26px;
+}
+#left_side_bar button {
+	background-color: transparent;
+	border: none;
+}
+.tweet img {
+	height: 50px;
+	width: 40px;
+}
+.tweet {
+	display: flex;
+	justify-content:space-between;
+	align-items: center;
+	border: 1px solid lightgray;
+	margin: 10px;
+	padding: 5px;
+	gap: 20px;
+}
+.tweet_content {
+	display: flex;
+	flex-direction: column;
+}
+#add_tweet img{
+	width: 90px;
+	height: 90px;
+	border-radius: 507;
+}
+#add_tweet_input{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+#add_tweet{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+#add_tweet_input input{
+	width: 97%;
+	height: 97px;
+}
+#add_tweet_input button {
+	align-self: end;
+}
