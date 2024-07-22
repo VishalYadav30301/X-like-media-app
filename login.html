@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Log In</title>
+	<link rel="stylesheet" href="resources/Styles/login.css">
+	<link rel="icon" href="resources/images/logo2.jpg">
+</head>
+<body style="background-image:url('resources/Images/loginbg.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; margin: 0; padding: 0;">
+
+    <div class="container">
+		<img id = "x_logo" src="resources/images/logo.png" alt="x logo">
+		<form class="form-container" id="form-container-id">
+			<h1>Happening Now!</h1>
+			<div>
+				<label for="login-username">UserName:</label>
+				<input type="text" id="login-username" name="login-username" placeholder="enter username">
+			</div>
+			<div>
+				<label for="login-password">Password:</label>
+				<input type="password" id="login-password" name="login-password" placeholder="enter password">
+			</div>
+			<div id="login-error"></div>
+			<button class="login-btn" type="submit">login</button>
+			<a href="login.html">New user? signup here</a>
+		</form>
+	</div>
+	<script src="resources/scripts/login.js"></script>
+</body>
+</html>
